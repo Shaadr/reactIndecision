@@ -5,19 +5,27 @@
   babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
-// JSX - Javascript XML - JS Syntax extension
-var template = React.createElement(
+//create app object -> title & subtitle properties
+//use title/subtitle in template
+//render template
+
+var app = {
+  title: 'Indesicion App',
+  subtitle: 'Making the hard decisions for you!'
+
+  // JSX - Javascript XML - JS Syntax extension
+};var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Indesicion App!'
+    app.title
   ),
   React.createElement(
     'p',
     null,
-    'This is some info'
+    app.subtitle
   ),
   React.createElement(
     'ol',
@@ -68,4 +76,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

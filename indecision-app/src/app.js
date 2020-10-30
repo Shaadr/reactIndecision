@@ -3,11 +3,20 @@
   babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
+//create app object -> title & subtitle properties
+//use title/subtitle in template
+//render template
+
+var app = {
+  title: 'Indesicion App',
+  subtitle: 'Making the hard decisions for you!'
+}
+
 // JSX - Javascript XML - JS Syntax extension
 var template = (
   <div>
-    <h1>Indesicion App!</h1> 
-    <p>This is some info</p>
+    <h1>{app.title}</h1> 
+    <p>{app.subtitle}</p>
   
     <ol>
       <li>item one</li>
@@ -37,4 +46,4 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
