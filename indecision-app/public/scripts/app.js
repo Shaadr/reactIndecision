@@ -7,9 +7,32 @@
 
 // JSX - Javascript XML - JS Syntax extension
 var template = React.createElement(
-  'h1',
+  'div',
   null,
-  'Indesicion App!'
+  React.createElement(
+    'h1',
+    null,
+    'Indesicion App!'
+  ),
+  React.createElement(
+    'p',
+    null,
+    'This is some info'
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'item two'
+    )
+  )
 );
 var appRoot = document.getElementById('app');
 

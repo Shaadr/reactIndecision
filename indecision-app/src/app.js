@@ -4,7 +4,17 @@
 */
 
 // JSX - Javascript XML - JS Syntax extension
-var template = <h1>Indesicion App!</h1>;
+var template = (
+  <div>
+    <h1>Indesicion App!</h1> 
+    <p>This is some info</p>
+  
+    <ol>
+      <li>item one</li>
+      <li>item two</li>
+    </ol>
+  </div>
+);
 var appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
