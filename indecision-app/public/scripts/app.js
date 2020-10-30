@@ -2,7 +2,7 @@
 
 /*This file is complied via babel command.
   from /indesicion-app run: 
-  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react
+  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
 // JSX - Javascript XML - JS Syntax extension
@@ -35,12 +35,14 @@ var template = React.createElement(
   )
 );
 
-//Create a templateTwo var JSX expression
-//div
-//  h1 -> Mike Hanks
-//  p -> Age: 30
-//  p -> Location: STG
-//Render templateTwo instead of template
+var user = {
+  name: 'Mike Hanks',
+  age: 30,
+  location: 'St. George'
+};
+var userName = 'Mike';
+var userAge = 30;
+var userLocation = 'STG';
 
 var templateTwo = React.createElement(
   'div',
@@ -48,17 +50,19 @@ var templateTwo = React.createElement(
   React.createElement(
     'h1',
     null,
-    ' Mike Hanks'
+    user.name
   ),
   React.createElement(
     'p',
     null,
-    ' Age: 30'
+    ' Age: ',
+    user.age
   ),
   React.createElement(
     'p',
     null,
-    ' Location: STG'
+    ' Location: ',
+    user.location
   )
 );
 

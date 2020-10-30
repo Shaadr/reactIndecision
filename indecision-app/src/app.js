@@ -1,6 +1,6 @@
 /*This file is complied via babel command.
   from /indesicion-app run: 
-  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react
+  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
 // JSX - Javascript XML - JS Syntax extension
@@ -16,18 +16,21 @@ var template = (
   </div>
 );
 
-//Create a templateTwo var JSX expression
-//div
-//  h1 -> Mike Hanks
-//  p -> Age: 30
-//  p -> Location: STG
-//Render templateTwo instead of template
+
+var user = {
+  name: 'Mike Hanks',
+  age: 30,
+  location: 'St. George'
+}
+var userName = 'Mike'
+var userAge = 30
+var userLocation = 'STG'
 
 var templateTwo = (
   <div>
-    <h1> Mike Hanks</h1>
-    <p> Age: 30</p>
-    <p> Location: STG</p>
+    <h1>{user.name}</h1>
+    <p> Age: {user.age}</p>
+    <p> Location: {user.location}</p>
   </div>
 );
 
