@@ -2,14 +2,14 @@
 
 /*This file is complied via babel command.
   from /indesicion-app run: 
-  babel src/app.js --out-file=public/scripts/app.js --presets-env,react --watch
+  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react
 */
 
 // JSX - Javascript XML - JS Syntax extension
 var template = React.createElement(
-  'p',
+  'h1',
   null,
-  'Testing babel compile and watch'
+  'Indesicion App!'
 );
 var appRoot = document.getElementById('app');
 
