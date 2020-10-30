@@ -5,10 +5,6 @@
   babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
-//create app object -> title & subtitle properties
-//use title/subtitle in template
-//render template
-
 var app = {
   title: 'Indesicion App',
   subtitle: 'Making the hard decisions for you!'
@@ -48,6 +44,9 @@ var user = {
   age: 30,
   location: 'St. George'
 };
+function getLocation(location) {
+  return location ? location : 'Unknown';
+}
 var userName = 'Mike';
 var userAge = 30;
 var userLocation = 'STG';
@@ -70,10 +69,10 @@ var templateTwo = React.createElement(
     'p',
     null,
     ' Location: ',
-    user.location
+    getLocation(user.location)
   )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
