@@ -5,9 +5,14 @@
   babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
+// only render the subtitle (and p tag) if subtitle exist - logical && operator
+// add options array to app object with two items
+// render new p tag - render if options.length > 0 "here are your options" : "No options"
+
 var app = {
   title: 'Indesicion App',
-  subtitle: 'Making the hard decisions for you!'
+  subtitle: 'Making the hard decisions for you!',
+  options: ['One', 'Two']
 
   // JSX - Javascript XML - JS Syntax extension
 };var template = React.createElement(
@@ -18,10 +23,15 @@ var app = {
     null,
     app.title
   ),
-  React.createElement(
+  app.subtitle && React.createElement(
     'p',
     null,
     app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? "Here are your options:" : "No Options"
   ),
   React.createElement(
     'ol',
@@ -70,10 +80,9 @@ var templateTwo = React.createElement(
     'Age: ',
     user.age
   ),
-  ' ',
   getLocation(user.location)
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

@@ -3,16 +3,22 @@
   babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
 */
 
+// only render the subtitle (and p tag) if subtitle exist - logical && operator
+// add options array to app object with two items
+// render new p tag - render if options.length > 0 "here are your options" : "No options"
+
 var app = {
   title: 'Indesicion App',
-  subtitle: 'Making the hard decisions for you!'
+  subtitle: 'Making the hard decisions for you!',
+  options: ['One', 'Two']
 }
 
 // JSX - Javascript XML - JS Syntax extension
 var template = (
   <div>
     <h1>{app.title}</h1> 
-    <p>{app.subtitle}</p>
+    {app.subtitle && <p>{app.subtitle}</p>}
+    <p>{app.options.length > 0 ? "Here are your options:" : "No Options"}</p>
   
     <ol>
       <li>item one</li>
@@ -36,7 +42,7 @@ function getLocation(location) {
 var templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>} {/* logical && Operator: because 1st value (user.age) is truthy and the 2nd value (p tag and contents) is truthy, the second value gets used*/}
+    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>} 
     {getLocation(user.location)}
   </div>
 );
@@ -44,4 +50,4 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
