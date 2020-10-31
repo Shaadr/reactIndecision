@@ -21,24 +21,23 @@ var template = (
   </div>
 );
 
+// -----------------------------
 
 var user = {
   name: 'Mike Hanks',
   age: 30,
   location: 'St. George'
 }
+
 function getLocation(location) {
-  return location ? location : 'Unknown'
+  return location ? <p>Location: {location}</p> : undefined
 }
-var userName = 'Mike'
-var userAge = 30
-var userLocation = 'STG'
 
 var templateTwo = (
   <div>
-    <h1>{user.name}</h1>
-    <p> Age: {user.age}</p>
-    <p> Location: {getLocation(user.location)}</p>
+    <h1>{user.name ? user.name : 'Anonymous'}</h1>
+    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>} {/* logical && Operator: because 1st value (user.age) is truthy and the 2nd value (p tag and contents) is truthy, the second value gets used*/}
+    {getLocation(user.location)}
   </div>
 );
 
