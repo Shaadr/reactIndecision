@@ -18,6 +18,14 @@ function getPetName() {
 }
 
 getPetName();
-console.log('petname', petName) //-> will error b/c scope. let,const  are "block scoped". 
+// console.log('petname', petName) //-> will error b/c scope. let,const  are "block scoped". 
 
-var fullName = "Mike Hanks";
+const fullName = "Mike Hanks";
+let firstName;
+
+if (fullName) {
+    firstName = fullName.split(' ')[0]
+    console.log(firstName)
+}
+
+console.log(firstName) // if firstname is var, then it will print the first name twice. if const or let, it will be block scoped and this c.log will fail.
