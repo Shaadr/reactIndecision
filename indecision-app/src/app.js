@@ -7,14 +7,14 @@
 // add options array to app object with two items
 // render new p tag - render if options.length > 0 "here are your options" : "No options"
 
-let app = {
+const app = {
   title: 'Indesicion App',
   subtitle: 'Making the hard decisions for you!',
   options: ['One', 'Two']
 }
 
 // JSX - Javascript XML - JS Syntax extension
-let template = (
+const template = (
   <div>
     <h1>{app.title}</h1> 
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -29,7 +29,7 @@ let template = (
 
 // -----------------------------
 
-let user = {
+const user = {
   name: 'Mike Hanks',
   age: 30,
   location: 'St. George'
@@ -39,7 +39,7 @@ function getLocation(location) {
   return location ? <p>Location: {location}</p> : undefined
 }
 
-let templateTwo = (
+const templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {(user.age && user.age >= 18) && <p>Age: {user.age}</p>} 
@@ -48,6 +48,6 @@ let templateTwo = (
 );
 
 
-let appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
