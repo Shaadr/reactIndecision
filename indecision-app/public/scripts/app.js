@@ -1,78 +1,88 @@
 'use strict';
 
-// arguments object- no longer bound w/ arrow function
+/*This file is complied via babel command.
+  from /indesicion-app run: 
+  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
+*/
 
-var add = function add(a, b) {
-    console.log(arguments);
-    return a + b;
-};
+// only render the subtitle (and p tag) if subtitle exist - logical && operator
+// add options array to app object with two items
+// render new p tag - render if options.length > 0 "here are your options" : "No options"
 
-var addArrow = function addArrow(a, b) {
-    // console.log(arguments); //will error. no longer have access to arguments in arrow functions
-    return a + b;
-};
+var app = {
+  title: 'Indesicion App',
+  subtitle: 'Making the hard decisions for you!',
+  options: ['One', 'Two']
 
-console.log(add(1, 2));
-console.log(addArrow(55, 34));
+  // JSX - Javascript XML - JS Syntax extension
+};var template = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    app.title
+  ),
+  app.subtitle && React.createElement(
+    'p',
+    null,
+    app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? "Here are your options:" : "No Options"
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'item two'
+    )
+  )
+);
 
-//this keyword - no longer bound
+// -----------------------------
 
 var user = {
-    name: 'Mike',
-    cities: ['Sandy', 'STG', 'Alpine', 'Ghent'],
-    printPlacesLived: function printPlacesLived(params) {
-        var _this = this;
-
-        console.log(this.name);
-        console.log(this.cities);
-
-        // const that = this
-        // this.cities.forEach(function (city) {
-        //     console.log(`${that.name} has lived in ${city}`) //will error because 'this' is outside the scope. workaround 1 is setting a variable "that" = "this". arrow functions fix this by using the value of the context they are created in.
-        // })
-
-        this.cities.forEach(function (city) {
-            console.log(_this.name + ' has lived in ' + city);
-        });
-    },
-    // printPlacesLivedArrow: () => { 
-    //     console.log(this)
-    //     this.cities.forEach((city) => { //will error because it doesnt bind its own 'this' value. it goes from local scope(the function) to parent scope
-    //         console.log(`${this.name} has lived in ${city}`)
-    //     })
-    // }
-
-    //**Prefered** ES6 method declaration (new)
-    printPlacesLivedNew: function printPlacesLivedNew() {
-        var _this2 = this;
-
-        return this.cities.map(function (city) {
-            return _this2.name + ' has lived in ' + city;
-        }); //map lets you transform each item and RETURNS A NEW ARRAY. can be saved to new variable if needed
-    }
+  name: 'Mike Hanks',
+  age: 30,
+  location: 'St. George'
 };
 
-user.printPlacesLived();
-// user.printPlacesLivedArrow()
-// user.printPlacesLivedNew()
-console.log(user.printPlacesLivedNew());
+function getLocation(location) {
+  return location ? React.createElement(
+    'p',
+    null,
+    'Location: ',
+    location
+  ) : undefined;
+}
 
-//Challenge
-// create obj multiplier. 
-// numbers - arrray of numbers i.e. [1, 6]
-// multiplyBy - single number i.e. 2 
-// multipy - method returns new array where each number in the array has been multiplied by the multiplier value -> [2, 12]
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    user.name ? user.name : 'Anonymous'
+  ),
+  user.age && user.age >= 18 && React.createElement(
+    'p',
+    null,
+    'Age: ',
+    user.age
+  ),
+  getLocation(user.location)
+);
 
-var multiplier = {
-    numbers: [1, 6, 10],
-    multiplyBy: 3,
-    multiply: function multiply() {
-        var _this3 = this;
+var appRoot = document.getElementById('app');
 
-        return this.numbers.map(function (number) {
-            return number * _this3.multiplyBy;
-        });
-    }
-};
-
-console.log(multiplier.multiply());
+ReactDOM.render(template, appRoot);
