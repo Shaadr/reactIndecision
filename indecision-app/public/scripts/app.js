@@ -49,10 +49,23 @@ var app = {
   )
 );
 
+//Challenge
+//Make Button "-1" - setup minusOne function, register on click handler, log "minusOne"
+//Make rest button "reset" - setup reset fucntion - log "reset" on click
+
+
 var count = 0;
-var addOne = function addOne() {
-  console.log('addone');
+
+var minusOne = function minusOne() {
+  return console.log('minusOne');
 };
+var addOne = function addOne() {
+  return console.log('addone');
+};
+var reset = function reset() {
+  return console.log('reset');
+};
+
 var templateTwo = React.createElement(
   'div',
   null,
@@ -66,10 +79,18 @@ var templateTwo = React.createElement(
     'button',
     { onClick: addOne },
     '+1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: minusOne },
+    '-1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: reset },
+    'reset'
   )
 );
-
-console.log(templateTwo);
 
 var appRoot = document.getElementById('app');
 

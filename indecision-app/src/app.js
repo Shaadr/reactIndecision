@@ -27,19 +27,25 @@ const template = (
   </div>
 );
 
+//Challenge
+//Make Button "-1" - setup minusOne function, register on click handler, log "minusOne"
+//Make rest button "reset" - setup reset fucntion - log "reset" on click
+
 
 let count = 0;
-const addOne = () => {
-  console.log('addone')
-}
+
+const minusOne = () => console.log('minusOne')
+const addOne = () => console.log('addone')
+const reset = () => console.log('reset')
+
 const templateTwo = (
   <div>
     <h1>Count: {count}</h1>
     <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
+    <button onClick={reset}>reset</button>
   </div>
 );
-
-console.log(templateTwo)
 
 const appRoot = document.getElementById('app');
 
