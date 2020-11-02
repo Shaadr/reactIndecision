@@ -48,3 +48,20 @@ user.printPlacesLived()
 // user.printPlacesLivedArrow()
 // user.printPlacesLivedNew()
 console.log(user.printPlacesLivedNew())
+
+
+//Challenge
+// create obj multiplier. 
+// numbers - arrray of numbers i.e. [1, 6]
+// multiplyBy - single number i.e. 2 
+// multipy - method returns new array where each number in the array has been multiplied by the multiplier value -> [2, 12]
+
+const multiplier = {
+    numbers: [1, 6, 10],
+    multiplyBy: 3,
+    multiply() {
+        return this.numbers.map((number) => number * this.multiplyBy)
+    }
+}
+
+console.log(multiplier.multiply())

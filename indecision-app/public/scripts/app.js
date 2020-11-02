@@ -56,3 +56,23 @@ user.printPlacesLived();
 // user.printPlacesLivedArrow()
 // user.printPlacesLivedNew()
 console.log(user.printPlacesLivedNew());
+
+//Challenge
+// create obj multiplier. 
+// numbers - arrray of numbers i.e. [1, 6]
+// multiplyBy - single number i.e. 2 
+// multipy - method returns new array where each number in the array has been multiplied by the multiplier value -> [2, 12]
+
+var multiplier = {
+    numbers: [1, 6, 10],
+    multiplyBy: 3,
+    multiply: function multiply() {
+        var _this3 = this;
+
+        return this.numbers.map(function (number) {
+            return number * _this3.multiplyBy;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
