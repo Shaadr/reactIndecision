@@ -1,33 +1,88 @@
 'use strict';
 
-function square(x) {
-    return x * x;
+/*This file is complied via babel command.
+  from /indesicion-app run: 
+  babel ./src/app.js --out-file=./public/scripts/app.js --presets=env,react --watch
+*/
+
+// only render the subtitle (and p tag) if subtitle exist - logical && operator
+// add options array to app object with two items
+// render new p tag - render if options.length > 0 "here are your options" : "No options"
+
+var app = {
+  title: 'Indesicion App',
+  subtitle: 'Making the hard decisions for you!',
+  options: ['One', 'Two']
+
+  // JSX - Javascript XML - JS Syntax extension
+};var template = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    app.title
+  ),
+  app.subtitle && React.createElement(
+    'p',
+    null,
+    app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? "Here are your options:" : "No Options"
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'item two'
+    )
+  )
+);
+
+// -----------------------------
+
+var user = {
+  name: 'Mike Hanks',
+  age: 30,
+  location: 'St. George'
 };
 
-// const squareArrow = x => {
-//     return x * x;
-// };
+function getLocation(location) {
+  return location ? React.createElement(
+    'p',
+    null,
+    'Location: ',
+    location
+  ) : undefined;
+}
 
-//consise
-var squareArrow = function squareArrow(x) {
-    return x * x;
-};
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    user.name ? user.name : 'Anonymous'
+  ),
+  user.age && user.age >= 18 && React.createElement(
+    'p',
+    null,
+    'Age: ',
+    user.age
+  ),
+  getLocation(user.location)
+);
 
-console.log(squareArrow(15));
+var appRoot = document.getElementById('app');
 
-// Challenge - use arrow functions
-// getFirstName ('Mike Smith') -> 'Mike
-// Create regualr arrow function
-// Create using shorthand concise syntax
-
-var getFirstName = function getFirstName(fullName) {
-    return fullName.split(' ')[0];
-};
-
-var getFirstNameShorthand = function getFirstNameShorthand(fullName) {
-    return fullName.split(' ')[0];
-};
-
-console.log(getFirstName("Mike Smith"));
-
-console.log(getFirstNameShorthand("Jordan Hanks"));
+ReactDOM.render(template, appRoot);
