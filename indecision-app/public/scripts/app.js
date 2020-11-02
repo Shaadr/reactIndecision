@@ -50,6 +50,9 @@ var app = {
 );
 
 var count = 0;
+var addOne = function addOne() {
+  console.log('addone');
+};
 var templateTwo = React.createElement(
   'div',
   null,
@@ -61,10 +64,12 @@ var templateTwo = React.createElement(
   ),
   React.createElement(
     'button',
-    { id: 'my-id', className: 'button' },
+    { onClick: addOne },
     '+1'
   )
 );
+
+console.log(templateTwo);
 
 var appRoot = document.getElementById('app');
 
