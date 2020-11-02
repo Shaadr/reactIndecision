@@ -1,39 +1,35 @@
-'use strict';
-
 // arguments object- no longer bound w/ arrow function
 
-var add = function add(a, b) {
-    console.log(arguments);
+const add = function (a,b) {
+    console.log(arguments)
     return a + b;
-};
+}
 
-var addArrow = function addArrow(a, b) {
+const addArrow = (a,b) => {
     // console.log(arguments); //will error. no longer have access to arguments in arrow functions
     return a + b;
-};
+}
 
-console.log(add(1, 2));
-console.log(addArrow(55, 34));
+console.log(add(1,2))
+console.log(addArrow(55,34))
 
 //this keyword - no longer bound
 
-var user = {
+const user = {
     name: 'Mike',
     cities: ['Sandy', 'STG', 'Alpine', 'Ghent'],
-    printPlacesLived: function printPlacesLived(params) {
-        var _this = this;
-
-        console.log(this.name);
-        console.log(this.cities);
+    printPlacesLived: function (params) {
+        console.log(this.name)
+        console.log(this.cities)
 
         // const that = this
         // this.cities.forEach(function (city) {
         //     console.log(`${that.name} has lived in ${city}`) //will error because 'this' is outside the scope. workaround 1 is setting a variable "that" = "this". arrow functions fix this by using the value of the context they are created in.
         // })
 
-        this.cities.forEach(function (city) {
-            console.log(_this.name + ' has lived in ' + city);
-        });
+        this.cities.forEach((city) => {
+            console.log(`${this.name} has lived in ${city}`)
+        })
     },
     // printPlacesLivedArrow: () => { 
     //     console.log(this)
@@ -43,16 +39,12 @@ var user = {
     // }
 
     //**Prefered** ES6 method declaration (new)
-    printPlacesLivedNew: function printPlacesLivedNew() {
-        var _this2 = this;
-
-        return this.cities.map(function (city) {
-            return _this2.name + ' has lived in ' + city;
-        }); //map lets you transform each item and RETURNS A NEW ARRAY. can be saved to new variable if needed
+    printPlacesLivedNew() {
+        return this.cities.map((city) => this.name + ' has lived in ' + city)//map lets you transform each item and RETURNS A NEW ARRAY. can be saved to new variable if needed
     }
 };
 
-user.printPlacesLived();
+user.printPlacesLived()
 // user.printPlacesLivedArrow()
 // user.printPlacesLivedNew()
-console.log(user.printPlacesLivedNew());
+console.log(user.printPlacesLivedNew())
