@@ -50,9 +50,8 @@ var app = {
 );
 
 //Challenge
-//Make Button "-1" - setup minusOne function, register on click handler, log "minusOne"
-//Make rest button "reset" - setup reset fucntion - log "reset" on click
-
+//setup minus one and reset counters for real time tracking
+//rerender
 
 var count = 0;
 
@@ -62,11 +61,13 @@ var addOne = function addOne() {
 };
 
 var minusOne = function minusOne() {
-  console.log(count);
+  count--;
+  renderCounterApp();
 };
 
 var reset = function reset() {
-  return console.log('reset');
+  count = 0;
+  renderCounterApp();
 };
 
 var appRoot = document.getElementById('app');

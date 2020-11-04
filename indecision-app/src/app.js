@@ -28,9 +28,8 @@ const template = (
 );
 
 //Challenge
-//Make Button "-1" - setup minusOne function, register on click handler, log "minusOne"
-//Make rest button "reset" - setup reset fucntion - log "reset" on click
-
+//setup minus one and reset counters for real time tracking
+//rerender
 
 let count = 0;
 
@@ -40,10 +39,14 @@ const addOne = () => {
 }
 
 const minusOne = () => {
-  console.log(count)
+  count--;
+  renderCounterApp();
 }
 
-const reset = () => console.log('reset')
+const reset = () => {
+  count = 0;
+  renderCounterApp();
+}
 
 const appRoot = document.getElementById('app');
 
