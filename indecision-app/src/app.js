@@ -27,10 +27,6 @@ const template = (
   </div>
 );
 
-//Challenge
-//setup minus one and reset counters for real time tracking
-//rerender
-
 let count = 0;
 
 const addOne = () => {

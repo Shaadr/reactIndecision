@@ -49,10 +49,6 @@ var app = {
   )
 );
 
-//Challenge
-//setup minus one and reset counters for real time tracking
-//rerender
-
 var count = 0;
 
 var addOne = function addOne() {
