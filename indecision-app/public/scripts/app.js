@@ -27,7 +27,7 @@ var onFormSubmit = function onFormSubmit(e) {
 //create 'Remove All' button above list
 // on click -> wipe array -> rerender
 
-var removeAllOptions = function removeAllOptions(e) {
+var removeAllOptions = function removeAllOptions() {
   app.options = [];
   renderApp();
 };

@@ -25,7 +25,7 @@ const onFormSubmit = (e) => {
 //create 'Remove All' button above list
 // on click -> wipe array -> rerender
 
-const removeAllOptions = (e) => {
+const removeAllOptions = () => {
   app.options = [];
   renderApp();
 }
