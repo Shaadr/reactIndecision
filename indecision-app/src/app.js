@@ -6,7 +6,18 @@
 const app = {
   title: 'Indesicion App',
   subtitle: 'Making the hard decisions for you!',
-  options: ['One', 'Two']
+  options: []
+}
+
+const onFormSubmit = (e) => {
+  e.preventDefault();
+
+  const option = e.target.elements.option.value;
+
+  if (option) {
+    app.options.push(option);
+    e.target.elements.option.value = '';
+  }
 }
 
 // JSX - Javascript XML - JS Syntax extension
@@ -15,11 +26,15 @@ const template = (
     <h1>{app.title}</h1> 
     {app.subtitle && <p>{app.subtitle}</p>}
     <p>{app.options.length > 0 ? "Here are your options:" : "No Options"}</p>
-  
+    <p>{app.options.length}</p>
     <ol>
       <li>item one</li>
       <li>item two</li>
     </ol>
+    <form onSubmit={onFormSubmit}>
+      <input type="text" name="option"/>
+      <button>Add Option</button>
+    </form>
   </div>
 );
 

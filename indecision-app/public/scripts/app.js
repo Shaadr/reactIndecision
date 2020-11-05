@@ -8,10 +8,22 @@
 var app = {
   title: 'Indesicion App',
   subtitle: 'Making the hard decisions for you!',
-  options: ['One', 'Two']
+  options: []
+};
 
-  // JSX - Javascript XML - JS Syntax extension
-};var template = React.createElement(
+var onFormSubmit = function onFormSubmit(e) {
+  e.preventDefault();
+
+  var option = e.target.elements.option.value;
+
+  if (option) {
+    app.options.push(option);
+    e.target.elements.option.value = '';
+  }
+};
+
+// JSX - Javascript XML - JS Syntax extension
+var template = React.createElement(
   'div',
   null,
   React.createElement(
@@ -30,6 +42,11 @@ var app = {
     app.options.length > 0 ? "Here are your options:" : "No Options"
   ),
   React.createElement(
+    'p',
+    null,
+    app.options.length
+  ),
+  React.createElement(
     'ol',
     null,
     React.createElement(
@@ -41,6 +58,16 @@ var app = {
       'li',
       null,
       'item two'
+    )
+  ),
+  React.createElement(
+    'form',
+    { onSubmit: onFormSubmit },
+    React.createElement('input', { type: 'text', name: 'option' }),
+    React.createElement(
+      'button',
+      null,
+      'Add Option'
     )
   )
 );
