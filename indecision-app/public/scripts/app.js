@@ -23,6 +23,15 @@ var onFormSubmit = function onFormSubmit(e) {
   }
 };
 
+//Challenge 2
+//create 'Remove All' button above list
+// on click -> wipe array -> rerender
+
+var removeAllOptions = function removeAllOptions(e) {
+  app.options = [];
+  renderApp();
+};
+
 var renderApp = function renderApp() {
   // JSX - Javascript XML - JS Syntax extension
   var template = React.createElement(
@@ -47,6 +56,11 @@ var renderApp = function renderApp() {
       'p',
       null,
       app.options.length
+    ),
+    React.createElement(
+      'button',
+      { onClick: removeAllOptions },
+      'Remove All'
     ),
     React.createElement(
       'ol',
@@ -79,7 +93,3 @@ var renderApp = function renderApp() {
 };
 
 renderApp();
-//Challenge:
-//Create render fn that renders the new jsx
-//call it right away
-//call it after options array added to.
