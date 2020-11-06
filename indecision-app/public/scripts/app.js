@@ -23,6 +23,8 @@ var onFormSubmit = function onFormSubmit(e) {
   }
 };
 
+// const numbers = [55, 101, 1000]
+
 var removeAllOptions = function removeAllOptions() {
   app.options = [];
   renderApp();
@@ -49,41 +51,21 @@ var renderApp = function renderApp() {
       app.options.length > 0 ? "Here are your options:" : "No Options"
     ),
     React.createElement(
-      'p',
-      null,
-      app.options.length
-    ),
-    React.createElement(
       'button',
       { onClick: removeAllOptions },
       'Remove All'
     ),
-    [React.createElement(
-      'p',
-      { key: '1' },
-      'a'
-    ), React.createElement(
-      'p',
-      { key: '2' },
-      'b'
-    ), React.createElement(
-      'p',
-      { key: '3' },
-      'd'
-    )],
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'item one'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'item two'
-      )
+      app.options.map(function (option) {
+        return React.createElement(
+          'li',
+          { key: option },
+          'Option: ',
+          option
+        );
+      })
     ),
     React.createElement(
       'form',
