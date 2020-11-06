@@ -23,10 +23,6 @@ var onFormSubmit = function onFormSubmit(e) {
   }
 };
 
-//Challenge 2
-//create 'Remove All' button above list
-// on click -> wipe array -> rerender
-
 var removeAllOptions = function removeAllOptions() {
   app.options = [];
   renderApp();
@@ -62,6 +58,7 @@ var renderApp = function renderApp() {
       { onClick: removeAllOptions },
       'Remove All'
     ),
+    [99, 98, 97],
     React.createElement(
       'ol',
       null,

@@ -21,10 +21,6 @@ const onFormSubmit = (e) => {
   }
 }
 
-//Challenge 2
-//create 'Remove All' button above list
-// on click -> wipe array -> rerender
-
 const removeAllOptions = () => {
   app.options = [];
   renderApp();
@@ -39,6 +35,9 @@ const renderApp = () => {
       <p>{app.options.length > 0 ? "Here are your options:" : "No Options"}</p>
       <p>{app.options.length}</p>
       <button onClick={removeAllOptions}>Remove All</button>
+      {
+        [99, 98, 97]
+      }
       <ol>
         <li>item one</li>
         <li>item two</li>
