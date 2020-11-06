@@ -23,8 +23,6 @@ var onFormSubmit = function onFormSubmit(e) {
   }
 };
 
-// const numbers = [55, 101, 1000]
-
 var removeAllOptions = function removeAllOptions() {
   app.options = [];
   renderApp();

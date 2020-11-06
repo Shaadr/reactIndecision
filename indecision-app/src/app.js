@@ -21,8 +21,6 @@ const onFormSubmit = (e) => {
   }
 }
 
-// const numbers = [55, 101, 1000]
-
 const removeAllOptions = () => {
   app.options = [];
   renderApp();
@@ -36,21 +34,9 @@ const renderApp = () => {
       {app.subtitle && <p>{app.subtitle}</p>}
       <p>{app.options.length > 0 ? "Here are your options:" : "No Options"}</p>
       <button onClick={removeAllOptions}>Remove All</button>
-
-      {/** 
-      {
-        numbers.map((number) => {
-          return <p key={number}>Number: {number}</p>
-        })
-      }
-      */}
-      
       <ol>
-      {/* Challenge: map over app.options getting back an array of "li"s. set key and text */}
       {
-        app.options.map((option) => {
-          return <li key={option}>Option: {option}</li>
-        })
+        app.options.map((option) => <li key={option}>Option: {option}</li>)
       }
       </ol>
       <form onSubmit={onFormSubmit}>
