@@ -7,7 +7,7 @@ const app = {
   title: 'Indesicion App',
   subtitle: 'Making the hard decisions for you!',
   options: []
-}
+};
 
 const onFormSubmit = (e) => {
   e.preventDefault();
@@ -19,11 +19,17 @@ const onFormSubmit = (e) => {
     e.target.elements.option.value = '';
     renderApp();
   }
-}
+};
 
 const removeAllOptions = () => {
   app.options = [];
   renderApp();
+};
+
+const onMakeDecision = () => {
+  const randomNum = Math.floor(Math.random() * app.options.length)
+  const selectedOption = app.options[randomNum]
+  alert(selectedOption)
 }
 
 const renderApp = () => {
@@ -33,6 +39,7 @@ const renderApp = () => {
       <h1>{app.title}</h1> 
       {app.subtitle && <p>{app.subtitle}</p>}
       <p>{app.options.length > 0 ? "Here are your options:" : "No Options"}</p>
+      <button disabled={app.options.length === 0} onClick={onMakeDecision}>What should I do?</button>
       <button onClick={removeAllOptions}>Remove All</button>
       <ol>
       {
