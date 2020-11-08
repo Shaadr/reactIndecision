@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var showing = false;
 
@@ -9,26 +9,22 @@ var onShowDetails = function onShowDetails() {
 
 var render = function render() {
     var template = React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'h1',
+            "h1",
             null,
-            'Visibility Toggle'
+            "Visibility Toggle"
         ),
-        !showing ? React.createElement(
-            'button',
+        React.createElement(
+            "button",
             { onClick: onShowDetails },
-            'Show Details'
-        ) : React.createElement(
-            'button',
-            { onClick: onShowDetails },
-            'Hide Details'
+            showing ? "Hide Details" : "Show Details"
         ),
         showing ? React.createElement(
-            'p',
+            "p",
             null,
-            'More Details Shown!'
+            "More Details Shown!"
         ) : null
     );
 
