@@ -10,7 +10,7 @@ const render = () => {
         <div>
             <h1>Visibility Toggle</h1>
             <button onClick={onShowDetails}>{showing ? "Hide Details" : "Show Details"}</button> 
-            {showing ? <p>More Details Shown!</p> : null}
+            {showing && <p>More Details Shown!</p>}
         </div>
     )
 

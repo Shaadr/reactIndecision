@@ -21,11 +21,11 @@ var render = function render() {
             { onClick: onShowDetails },
             showing ? "Hide Details" : "Show Details"
         ),
-        showing ? React.createElement(
+        showing && React.createElement(
             "p",
             null,
             "More Details Shown!"
-        ) : null
+        )
     );
 
     var appRoot = document.getElementById('app');
