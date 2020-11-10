@@ -4,13 +4,18 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+// Setup constructor to take name and age(default 0)
+// getDescription - {Name} is {xx} year(s) old.
+
 var Person = function () {
     function Person() {
         var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';
+        var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
         _classCallCheck(this, Person);
 
         this.name = name;
+        this.age = age;
     }
 
     _createClass(Person, [{
@@ -18,16 +23,21 @@ var Person = function () {
         value: function getGreeting(name) {
             return 'Hi! I am ' + this.name;
         }
+    }, {
+        key: 'getDescription',
+        value: function getDescription(string) {
+            return this.name + ' is ' + this.age + ' year(s) old!';
+        }
     }]);
 
     return Person;
 }();
 
-var me = new Person('Mike Hanks');
-console.log(me.getGreeting());
+var me = new Person('Mike Hanks', 30);
+console.log(me.getDescription());
 
-var other = new Person('Jordan Hanks');
-console.log(other.getGreeting());
+var other = new Person('Jordan Hanks', 34);
+console.log(other.getDescription());
 
 var anonymous = new Person();
-console.log(anonymous.getGreeting());
+console.log(anonymous.getDescription());
