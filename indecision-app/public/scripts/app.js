@@ -4,9 +4,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Setup constructor to take name and age(default 0)
-// getDescription - {Name} is {xx} year(s) old.
-
 var Person = function () {
     function Person() {
         var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';

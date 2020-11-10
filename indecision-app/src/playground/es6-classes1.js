@@ -1,6 +1,3 @@
-// Setup constructor to take name and age(default 0)
-// getDescription - {Name} is {xx} year(s) old.
-
 class Person {
     constructor(name = 'Anonymous', age = 0) {
         this.name = name
