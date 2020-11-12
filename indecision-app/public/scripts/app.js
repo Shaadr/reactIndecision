@@ -67,9 +67,6 @@ var Action = function (_React$Component2) {
   return Action;
 }(React.Component);
 
-//Options -> render static text
-//AddOption -> render static text
-
 var Option = function (_React$Component3) {
   _inherits(Option, _React$Component3);
 
@@ -85,11 +82,7 @@ var Option = function (_React$Component3) {
       return React.createElement(
         'div',
         null,
-        React.createElement(
-          'p',
-          null,
-          'Option Component Here'
-        )
+        'Option Component Here'
       );
     }
   }]);
@@ -112,11 +105,7 @@ var AddOption = function (_React$Component4) {
       return React.createElement(
         'div',
         null,
-        React.createElement(
-          'p',
-          null,
-          'AddOption Component Here'
-        )
+        'AddOption Component Here'
       );
     }
   }]);

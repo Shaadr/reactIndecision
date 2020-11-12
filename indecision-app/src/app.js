@@ -19,14 +19,11 @@ class Action extends React.Component {
   }
 }
 
-//Options -> render static text
-//AddOption -> render static text
-
 class Option extends React.Component {
   render() {
     return (
       <div>
-        <p>Option Component Here</p>
+        Option Component Here
       </div>
     )
   }
@@ -36,7 +33,7 @@ class AddOption extends React.Component {
   render() {
     return (
       <div>
-        <p>AddOption Component Here</p>
+        AddOption Component Here
       </div>
     )
   }
