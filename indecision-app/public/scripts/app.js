@@ -23,12 +23,12 @@ var Person = function () {
 
     _createClass(Person, [{
         key: 'getGreeting',
-        value: function getGreeting(name) {
-            return 'Hi! I am ' + this.name;
+        value: function getGreeting() {
+            return 'Hi! I am ' + this.name + '.';
         }
     }, {
         key: 'getDescription',
-        value: function getDescription(string) {
+        value: function getDescription() {
             return this.name + ' is ' + this.age + ' year(s) old.';
         }
     }]);
@@ -59,22 +59,49 @@ var Student = function (_Person) {
             var description = _get(Student.prototype.__proto__ || Object.getPrototypeOf(Student.prototype), 'getDescription', this).call(this);
 
             return this.hasMajor() ? description += ' Their major is ' + this.major + '.' : description;
-
-            // if (this.hasMajor()) {
-            //     description += ` Their major is ${this.major}.` 
-            // }
-
-            // return description
         }
     }]);
 
     return Student;
 }(Person);
 
-var me = new Student('Mike Hanks', 30, 'Computer Science');
-console.log(me.hasMajor());
-console.log(me.getDescription());
+//Traveler -> Person
+//Add support for homeLocation
+//Override getGreeting
+//1. include original greeting.
+//2. if homeLocation add "im visiting from {homeLocation}"
 
-var other = new Student('Jordan Hanks', 34);
-console.log(other.hasMajor());
-console.log(other.getDescription());
+var Traveler = function (_Person2) {
+    _inherits(Traveler, _Person2);
+
+    function Traveler(name, age, homeLocation) {
+        _classCallCheck(this, Traveler);
+
+        var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age));
+
+        _this2.homeLocation = homeLocation;
+        return _this2;
+    }
+
+    _createClass(Traveler, [{
+        key: 'getGreeting',
+        value: function getGreeting() {
+            var greeting = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreeting', this).call(this);
+            return this.homeLocation ? greeting += ' I\'m visiting from ' + this.homeLocation : greeting;
+        }
+    }]);
+
+    return Traveler;
+}(Person);
+
+var me = new Traveler('Mike Hanks', 30, 'St. George');
+console.log(me.getGreeting());
+
+var other = new Traveler('Jordan Hanks', 34);
+console.log(other.getGreeting());
+
+// const hobo = new Traveler('Tom Jones', 239, 'Central Park')
+// console.log(hobo.getGreeting())
+
+// const jimbo = new Traveler('Jimbo Baggins', 111)
+// console.log(jimbo.getGreeting())
