@@ -30,12 +30,6 @@ class Student extends Person {
     }
 }
 
-//Traveler -> Person
-//Add support for homeLocation
-//Override getGreeting
-//1. include original greeting.
-//2. if homeLocation add "im visiting from {homeLocation}"
-
 class Traveler extends Person {
     constructor (name, age, homeLocation) {
         super(name, age);
@@ -52,9 +46,3 @@ console.log(me.getGreeting())
 
 const other = new Traveler('Jordan Hanks', 34)
 console.log(other.getGreeting())
-
-// const hobo = new Traveler('Tom Jones', 239, 'Central Park')
-// console.log(hobo.getGreeting())
-
-// const jimbo = new Traveler('Jimbo Baggins', 111)
-// console.log(jimbo.getGreeting())

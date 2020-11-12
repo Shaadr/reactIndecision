@@ -65,12 +65,6 @@ var Student = function (_Person) {
     return Student;
 }(Person);
 
-//Traveler -> Person
-//Add support for homeLocation
-//Override getGreeting
-//1. include original greeting.
-//2. if homeLocation add "im visiting from {homeLocation}"
-
 var Traveler = function (_Person2) {
     _inherits(Traveler, _Person2);
 
@@ -99,9 +93,3 @@ console.log(me.getGreeting());
 
 var other = new Traveler('Jordan Hanks', 34);
 console.log(other.getGreeting());
-
-// const hobo = new Traveler('Tom Jones', 239, 'Central Park')
-// console.log(hobo.getGreeting())
-
-// const jimbo = new Traveler('Jimbo Baggins', 111)
-// console.log(jimbo.getGreeting())
