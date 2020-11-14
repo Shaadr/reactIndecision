@@ -21,10 +21,11 @@ var IndecisionApp = function (_React$Component) {
     key: 'render',
     value: function render() {
       var title = 'Indecision';
+      var subtitle = 'Put your life in the hands of a computer';
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, { title: title }),
+        React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
         React.createElement(Options, null),
         React.createElement(AddOption, null)
@@ -58,7 +59,7 @@ var Header = function (_React$Component2) {
         React.createElement(
           'h2',
           null,
-          'Put your life in the hands of a computer'
+          this.props.subtitle
         )
       );
     }
