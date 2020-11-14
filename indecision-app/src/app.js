@@ -32,11 +32,26 @@ class Action extends React.Component {
   }
 }
 
+
+//Option -> Option component here
+// Render inside Options component
+
+class Option extends React.Component {
+  render() {
+    return (
+      <div>
+      Option Component here
+      </div>
+    )
+  }
+}
+
 class Options extends React.Component {
   render() {
     return (
       <div>
-        Option Component Here
+        Options Component Here
+        <Option />
       </div>
     )
   }
