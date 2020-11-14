@@ -20,10 +20,11 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'render',
     value: function render() {
+      var title = 'Indecision';
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, null),
+        React.createElement(Header, { title: title }),
         React.createElement(Action, null),
         React.createElement(Options, null),
         React.createElement(AddOption, null)
@@ -52,7 +53,7 @@ var Header = function (_React$Component2) {
         React.createElement(
           'h1',
           null,
-          'Indecision'
+          this.props.title
         ),
         React.createElement(
           'h2',
@@ -92,9 +93,6 @@ var Action = function (_React$Component3) {
 
   return Action;
 }(React.Component);
-
-//Option -> Option component here
-// Render inside Options component
 
 var Option = function (_React$Component4) {
   _inherits(Option, _React$Component4);

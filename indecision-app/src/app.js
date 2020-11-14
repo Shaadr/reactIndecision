@@ -1,8 +1,9 @@
 class IndecisionApp extends React.Component {
   render() {
+    const title = 'Indecision'
     return (
       <div>
-        <Header />
+        <Header title={title}/>
         <Action />
         <Options />
         <AddOption />
@@ -15,7 +16,7 @@ class Header extends React.Component {
   render () {
     return (
       <div>
-        <h1>Indecision</h1>
+        <h1>{this.props.title}</h1>
         <h2>Put your life in the hands of a computer</h2>
       </div>
     )
@@ -31,10 +32,6 @@ class Action extends React.Component {
     )
   }
 }
-
-
-//Option -> Option component here
-// Render inside Options component
 
 class Option extends React.Component {
   render() {
