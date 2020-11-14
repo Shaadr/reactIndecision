@@ -41,10 +41,10 @@ class Action extends React.Component {
 class Options extends React.Component {
   render() {
     return (
-      <div>
-        <p key={this.props.options[0]}>{this.props.options[0]}</p>
-        <p key={this.props.options[1]}>{this.props.options[1]}</p>
-        <p key={this.props.options[2]}>{this.props.options[2]}</p>
+      <div> 
+        {
+          this.props.options.map((option) => <p key={option}>{option}</p>)
+        }
       </div>
     )
   }
