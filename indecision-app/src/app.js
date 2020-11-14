@@ -36,27 +36,25 @@ class Action extends React.Component {
   }
 }
 
-class Option extends React.Component {
-  render() {
-    return (
-      <div>
-      Option Component here
-      
-      </div>
-    )
-  }
-}
-
-//Setup options props for Options
-//Render length of array
+//render new p tag for each option(set text and key)
 
 class Options extends React.Component {
   render() {
     return (
       <div>
-        Options Component Here
-        <p>{this.props.options.length}</p>
-        <Option />
+        <p key={this.props.options[0]}>{this.props.options[0]}</p>
+        <p key={this.props.options[1]}>{this.props.options[1]}</p>
+        <p key={this.props.options[2]}>{this.props.options[2]}</p>
+      </div>
+    )
+  }
+}
+
+class Option extends React.Component {
+  render() {
+    return (
+      <div>
+        Option Component
       </div>
     )
   }

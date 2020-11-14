@@ -97,34 +97,10 @@ var Action = function (_React$Component3) {
   return Action;
 }(React.Component);
 
-var Option = function (_React$Component4) {
-  _inherits(Option, _React$Component4);
+//render new p tag for each option(set text and key)
 
-  function Option() {
-    _classCallCheck(this, Option);
-
-    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
-  }
-
-  _createClass(Option, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        'Option Component here'
-      );
-    }
-  }]);
-
-  return Option;
-}(React.Component);
-
-//Setup options props for Options
-//Render length of array
-
-var Options = function (_React$Component5) {
-  _inherits(Options, _React$Component5);
+var Options = function (_React$Component4) {
+  _inherits(Options, _React$Component4);
 
   function Options() {
     _classCallCheck(this, Options);
@@ -138,18 +114,49 @@ var Options = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        'Options Component Here',
         React.createElement(
           'p',
-          null,
-          this.props.options.length
+          { key: this.props.options[0] },
+          this.props.options[0]
         ),
-        React.createElement(Option, null)
+        React.createElement(
+          'p',
+          { key: this.props.options[1] },
+          this.props.options[1]
+        ),
+        React.createElement(
+          'p',
+          { key: this.props.options[2] },
+          this.props.options[2]
+        )
       );
     }
   }]);
 
   return Options;
+}(React.Component);
+
+var Option = function (_React$Component5) {
+  _inherits(Option, _React$Component5);
+
+  function Option() {
+    _classCallCheck(this, Option);
+
+    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+  }
+
+  _createClass(Option, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        'Option Component'
+      );
+    }
+  }]);
+
+  return Option;
 }(React.Component);
 
 var AddOption = function (_React$Component6) {
