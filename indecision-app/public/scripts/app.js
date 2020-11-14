@@ -22,12 +22,14 @@ var IndecisionApp = function (_React$Component) {
     value: function render() {
       var title = 'Indecision';
       var subtitle = 'Put your life in the hands of a computer';
+      var options = ['thing one', 'thing two', 'thing four'];
+
       return React.createElement(
         'div',
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOption, null)
       );
     }
@@ -118,6 +120,9 @@ var Option = function (_React$Component4) {
   return Option;
 }(React.Component);
 
+//Setup options props for Options
+//Render length of array
+
 var Options = function (_React$Component5) {
   _inherits(Options, _React$Component5);
 
@@ -134,6 +139,11 @@ var Options = function (_React$Component5) {
         'div',
         null,
         'Options Component Here',
+        React.createElement(
+          'p',
+          null,
+          this.props.options.length
+        ),
         React.createElement(Option, null)
       );
     }
