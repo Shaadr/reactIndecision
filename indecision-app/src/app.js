@@ -5,7 +5,9 @@ const obj = {
   }
 }
 
-const getName = obj.getName;
+//.bind() allows you to bind an object ("this") context to getname.
+//i.e. getName.bind({name: 'Andrew'});
+const getName = obj.getName.bind(obj);
 console.log(getName())
 
 class IndecisionApp extends React.Component {

@@ -15,7 +15,9 @@ var obj = {
   }
 };
 
-var getName = obj.getName;
+//.bind() allows you to bind an object ("this") context to getname.
+//i.e. getName.bind({name: 'Andrew'});
+var getName = obj.getName.bind(obj);
 console.log(getName());
 
 var IndecisionApp = function (_React$Component) {
