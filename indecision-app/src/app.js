@@ -1,15 +1,3 @@
-const obj = {
-  name: 'Vikram',
-  getName() {
-    return this.name
-  }
-}
-
-//.bind() allows you to bind an object ("this") context to getname.
-//i.e. getName.bind({name: 'Andrew'});
-const getName = obj.getName.bind(obj);
-console.log(getName())
-
 class IndecisionApp extends React.Component {
   render() {
     const title = 'Indecision'
@@ -53,13 +41,13 @@ class Action extends React.Component {
 
 class Options extends React.Component {
   handleRemoveAll() {
-    alert('handleRemoveAll')
+    console.log(this.props.options)
   }
 
   render() {
     return (
       <div> 
-        <button onClick={this.handleRemoveAll}>Remove All Options</button>
+        <button onClick={this.handleRemoveAll.bind(this)}>Remove All Options</button>
         {
           this.props.options.map((option) => <Option key={option} optionText={option} />)
         }
