@@ -80,6 +80,11 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
+    key: 'handlePick',
+    value: function handlePick() {
+      alert('handle Pick');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -87,7 +92,7 @@ var Action = function (_React$Component3) {
         null,
         React.createElement(
           'button',
-          null,
+          { onClick: this.handlePick },
           'What Should I Do?'
         )
       );
@@ -96,8 +101,6 @@ var Action = function (_React$Component3) {
 
   return Action;
 }(React.Component);
-
-//render new p tag for each option(set text and key)
 
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);

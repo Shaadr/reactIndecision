@@ -27,16 +27,17 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+  handlePick() {
+    alert('handle Pick')
+  }
   render() {
     return (
       <div>
-        <button>What Should I Do?</button>
+        <button onClick={this.handlePick}>What Should I Do?</button>
       </div>
     )
   }
 }
-
-//render new p tag for each option(set text and key)
 
 class Options extends React.Component {
   render() {
