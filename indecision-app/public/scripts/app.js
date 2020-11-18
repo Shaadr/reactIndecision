@@ -16,6 +16,7 @@ var IndecisionApp = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
+    _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.state = {
       options: ['thing one', 'thing two', 'thing four']
     };
@@ -23,6 +24,15 @@ var IndecisionApp = function (_React$Component) {
   }
 
   _createClass(IndecisionApp, [{
+    key: 'handleDeleteOptions',
+    value: function handleDeleteOptions() {
+      this.setState(function () {
+        return {
+          options: []
+        };
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var title = 'Indecision';
@@ -33,7 +43,10 @@ var IndecisionApp = function (_React$Component) {
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, { hasOptions: this.state.options.length > 0 }),
-        React.createElement(Options, { options: this.state.options }),
+        React.createElement(Options, {
+          options: this.state.options,
+          handleDeleteOptions: this.handleDeleteOptions
+        }),
         React.createElement(AddOption, null)
       );
     }
