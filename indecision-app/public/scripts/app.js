@@ -8,38 +8,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// let count = 0;
-
-// const addOne = () => {
-//   count++;
-//   renderCounterApp();
-// }
-
-// const minusOne = () => {
-//   count--;
-//   renderCounterApp();
-// }
-
-// const reset = () => {
-//   count = 0;
-//   renderCounterApp();
-// }
-
-
-// const renderCounterApp = () => {
-//   const templateTwo = (
-//     <div>
-//       <h1>Count: {count}</h1>
-//       <button onClick={addOne}>+1</button>
-//       <button onClick={minusOne}>-1</button>
-//       <button onClick={reset}>reset</button>
-//     </div>
-//   );
-
-//   ReactDOM.render(templateTwo, appRoot);
-// }
-
-// renderCounterApp();
+//state example url: files.mead.io/2H3s0y3I222k
 
 var Counter = function (_React$Component) {
   _inherits(Counter, _React$Component);
@@ -52,6 +21,11 @@ var Counter = function (_React$Component) {
     _this.handleAddOne = _this.handleAddOne.bind(_this);
     _this.handleMinusOne = _this.handleMinusOne.bind(_this);
     _this.handleReset = _this.handleReset.bind(_this);
+
+    //state
+    _this.state = {
+      count: 0
+    };
     return _this;
   }
 
@@ -73,7 +47,6 @@ var Counter = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var count = 0;
       return React.createElement(
         'div',
         null,
@@ -81,7 +54,7 @@ var Counter = function (_React$Component) {
           'h1',
           null,
           'Count: ',
-          count
+          this.state.count
         ),
         React.createElement(
           'button',
