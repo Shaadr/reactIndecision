@@ -1,12 +1,12 @@
 class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
-    this.handlePick = this.handlePick.bind(this)
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+    this.handlePick = this.handlePick.bind(this);
     this.state = {
       options: ['thing one', 'thing two', 'thing four']
-    }
-  }
+    };
+  };
 
   handleDeleteOptions() {
     this.setState(() => {
@@ -16,9 +16,6 @@ class IndecisionApp extends React.Component {
     });
   };
 
-  //36. handlePick - pass down to Action and setup onClick to call - bind this
-  //  randomly pick and option and alert it
-  //remove old handlepick method
   handlePick() {
     const randomNum = Math.floor(Math.random() * this.state.options.length)
     const selectedOption = this.state.options[randomNum]
@@ -63,7 +60,8 @@ class Action extends React.Component {
       <div>
         <button 
           onClick={this.props.handlePick}
-          disabled={!this.props.hasOptions}>
+          disabled={!this.props.hasOptions}
+        >
           What Should I Do?
         </button>
       </div>

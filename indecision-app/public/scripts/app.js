@@ -35,11 +35,6 @@ var IndecisionApp = function (_React$Component) {
     }
   }, {
     key: 'handlePick',
-
-
-    //36. handlePick - pass down to Action and setup onClick to call - bind this
-    //  randomly pick and option and alert it
-    //remove old handlepick method
     value: function handlePick() {
       var randomNum = Math.floor(Math.random() * this.state.options.length);
       var selectedOption = this.state.options[randomNum];
@@ -122,7 +117,8 @@ var Action = function (_React$Component3) {
           'button',
           {
             onClick: this.props.handlePick,
-            disabled: !this.props.hasOptions },
+            disabled: !this.props.hasOptions
+          },
           'What Should I Do?'
         )
       );
