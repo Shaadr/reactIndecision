@@ -53,13 +53,31 @@ var Counter = function (_React$Component) {
   _createClass(Counter, [{
     key: 'render',
     value: function render() {
+      var count = 0;
+
       return React.createElement(
         'div',
         null,
         React.createElement(
           'h1',
           null,
-          'Options'
+          'Count: ',
+          count
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.addOne },
+          '+1'
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.minusOne },
+          '-1'
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.reset },
+          'reset'
         )
       );
     }

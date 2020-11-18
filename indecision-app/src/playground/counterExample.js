@@ -34,9 +34,14 @@
 
 class Counter extends React.Component {
   render() {
+    let count = 0
+
     return (
       <div>
-        <h1>Options</h1>
+        <h1>Count: {count}</h1>
+        <button onClick={this.addOne}>+1</button>
+        <button onClick={this.minusOne}>-1</button>
+        <button onClick={this.reset}>reset</button>
       </div>
     )
   }
