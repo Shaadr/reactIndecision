@@ -51,10 +51,24 @@ var Counter = function (_React$Component) {
   }
 
   _createClass(Counter, [{
+    key: 'handleAddOne',
+    value: function handleAddOne() {
+      alert('+1');
+    }
+  }, {
+    key: 'handleMinusOne',
+    value: function handleMinusOne() {
+      alert('-1');
+    }
+  }, {
+    key: 'handleReset',
+    value: function handleReset() {
+      alert('reset');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var count = 0;
-
       return React.createElement(
         'div',
         null,
@@ -66,17 +80,17 @@ var Counter = function (_React$Component) {
         ),
         React.createElement(
           'button',
-          { onClick: this.addOne },
+          { onClick: this.handleAddOne },
           '+1'
         ),
         React.createElement(
           'button',
-          { onClick: this.minusOne },
+          { onClick: this.handleMinusOne },
           '-1'
         ),
         React.createElement(
           'button',
-          { onClick: this.reset },
+          { onClick: this.handleReset },
           'reset'
         )
       );

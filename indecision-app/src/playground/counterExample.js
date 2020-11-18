@@ -33,15 +33,26 @@
 // renderCounterApp();
 
 class Counter extends React.Component {
+  handleAddOne() {
+    alert('+1')
+  }
+
+  handleMinusOne() {
+    alert('-1')
+  }
+
+  handleReset() {
+    alert('reset')
+  }
+
   render() {
     let count = 0
-
     return (
       <div>
         <h1>Count: {count}</h1>
-        <button onClick={this.addOne}>+1</button>
-        <button onClick={this.minusOne}>-1</button>
-        <button onClick={this.reset}>reset</button>
+        <button onClick={this.handleAddOne}>+1</button>
+        <button onClick={this.handleMinusOne}>-1</button>
+        <button onClick={this.handleReset}>reset</button>
       </div>
     )
   }
