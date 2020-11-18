@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -36,20 +36,49 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var VisibilityToggle = function (_React$Component) {
     _inherits(VisibilityToggle, _React$Component);
 
-    function VisibilityToggle() {
+    function VisibilityToggle(props) {
         _classCallCheck(this, VisibilityToggle);
 
-        return _possibleConstructorReturn(this, (VisibilityToggle.__proto__ || Object.getPrototypeOf(VisibilityToggle)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (VisibilityToggle.__proto__ || Object.getPrototypeOf(VisibilityToggle)).call(this, props));
+
+        _this.handleToggleVisibility = _this.handleToggleVisibility.bind(_this);
+
+        _this.state = {
+            visibility: false
+        };
+        return _this;
     }
 
     _createClass(VisibilityToggle, [{
-        key: 'render',
+        key: "handleToggleVisibility",
+        value: function handleToggleVisibility() {
+            this.setState(function (prevState) {
+                return {
+                    visibility: !prevState.visibility
+                };
+            });
+        }
+    }, {
+        key: "render",
         value: function render() {
-
             return React.createElement(
-                'div',
+                "div",
                 null,
-                'VisibiltiyToggle'
+                React.createElement(
+                    "h1",
+                    null,
+                    "Visibiltiy Toggle"
+                ),
+                React.createElement(
+                    "button",
+                    { onClick: this.handleToggleVisibility },
+                    this.state.visibility ? "Hide Details" : "Show Details"
+                ),
+                this.state.visibility && React.createElement(
+                    "p",
+                    null,
+                    "More Details Shown!"
+                )
             );
         }
     }]);
