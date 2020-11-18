@@ -15,6 +15,8 @@ class Counter extends React.Component {
 
   handleAddOne() {
     //setState only requires the state values changing. if there are other values not changing, those do not need to be added
+    //can pass in just an object if the previous state is not required i.e. see handleReset()
+    //  however this may become depreciated soon and the setState function will be preferred method.
     this.setState((prevState) => {
       return {
         count: prevState.count + 1
@@ -31,11 +33,7 @@ class Counter extends React.Component {
   }
 
   handleReset() {
-    this.setState(() => {
-      return {
-        count: 0
-      }
-    })
+    this.setState({count:0})
   }
 
   render() {

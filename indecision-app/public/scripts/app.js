@@ -33,6 +33,8 @@ var Counter = function (_React$Component) {
     key: 'handleAddOne',
     value: function handleAddOne() {
       //setState only requires the state values changing. if there are other values not changing, those do not need to be added
+      //can pass in just an object if the previous state is not required i.e. see handleReset()
+      //  however this may become depreciated soon and the setState function will be preferred method.
       this.setState(function (prevState) {
         return {
           count: prevState.count + 1
@@ -51,11 +53,7 @@ var Counter = function (_React$Component) {
   }, {
     key: 'handleReset',
     value: function handleReset() {
-      this.setState(function () {
-        return {
-          count: 0
-        };
-      });
+      this.setState({ count: 0 });
     }
   }, {
     key: 'render',
