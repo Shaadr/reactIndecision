@@ -14,7 +14,11 @@ class Counter extends React.Component {
   }
 
   handleAddOne() {
-    alert('+1')
+    this.setState(() => {
+      return {
+        count: 1
+      }
+    });
   }
 
   handleMinusOne() {
