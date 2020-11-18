@@ -124,23 +124,13 @@ var Action = function (_React$Component3) {
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
-  function Options(props) {
+  function Options() {
     _classCallCheck(this, Options);
 
-    //binds this to the entire component when rendered
-    //more efficient because it doesnt require binding every time the onClick method fires.
-    var _this4 = _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).call(this, props));
-
-    _this4.handleRemoveAll = _this4.handleRemoveAll.bind(_this4);
-    return _this4;
+    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
   }
 
   _createClass(Options, [{
-    key: 'handleRemoveAll',
-    value: function handleRemoveAll() {
-      console.log(this.props.options);
-    }
-  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -148,7 +138,7 @@ var Options = function (_React$Component4) {
         null,
         React.createElement(
           'button',
-          { onClick: this.handleRemoveAll },
+          { onClick: this.props.handleDeleteOptions },
           'Remove All Options'
         ),
         this.props.options.map(function (option) {
