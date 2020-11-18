@@ -14,15 +14,20 @@ class Counter extends React.Component {
   }
 
   handleAddOne() {
-    this.setState(() => {
+    //setState only requires the state values changing. if there are other values not changing, those do not need to be added
+    this.setState((prevState) => {
       return {
-        count: 1
+        count: prevState.count + 1
       }
     });
   }
 
   handleMinusOne() {
-    alert('-1')
+    this.setState((prevCount) => {
+      return {
+        count: prevCount.count - 1
+      }
+    });
   }
 
   handleReset() {

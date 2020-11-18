@@ -32,16 +32,21 @@ var Counter = function (_React$Component) {
   _createClass(Counter, [{
     key: 'handleAddOne',
     value: function handleAddOne() {
-      this.setState(function () {
+      //setState only requires the state values changing. if there are other values not changing, those do not need to be added
+      this.setState(function (prevState) {
         return {
-          count: 1
+          count: prevState.count + 1
         };
       });
     }
   }, {
     key: 'handleMinusOne',
     value: function handleMinusOne() {
-      alert('-1');
+      this.setState(function (prevCount) {
+        return {
+          count: prevCount.count - 1
+        };
+      });
     }
   }, {
     key: 'handleReset',
