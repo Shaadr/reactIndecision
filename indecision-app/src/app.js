@@ -3,6 +3,7 @@ class IndecisionApp extends React.Component {
     super(props);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePick = this.handlePick.bind(this);
+    this.handleAddOption = this.handleAddOption.bind(this);
     this.state = {
       options: ['thing one', 'thing two', 'thing four']
     };
@@ -22,6 +23,10 @@ class IndecisionApp extends React.Component {
     alert(selectedOption)
   };
 
+  handleAddOption(option) {
+    console.log(option)
+  }
+
   render() {
     const title = 'Indecision'
     const subtitle = 'Put your life in the hands of a computer'
@@ -37,7 +42,9 @@ class IndecisionApp extends React.Component {
           options={this.state.options} 
           handleDeleteOptions={this.handleDeleteOptions} 
         />
-        <AddOption />
+        <AddOption
+          handleAddOption={this.handleAddOption}  
+        />
       </div>
     );
   }
@@ -93,13 +100,18 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+  //because we use "this" inside handleAddOption function below, we must bind it
+  constructor(props) {
+    super(props)
+    this.handleAddOption = this.handleAddOption.bind(this)
+  }
   handleAddOption(e) {
     e.preventDefault();
     
     const option = e.target.elements.option.value.trim();
 
     if (option) {
-      alert(option)
+      this.props.handleAddOption(option)
     }
   }
 
