@@ -1,3 +1,8 @@
+//Stateless Functional Component
+
+
+//class based component - manages state
+//  good examples are Header, Action, Options, and Option
 class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
