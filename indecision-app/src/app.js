@@ -61,10 +61,15 @@ class IndecisionApp extends React.Component {
         <AddOption
           handleAddOption={this.handleAddOption}  
         />
+        {
+        /*
         <User 
           name="Mike"
           age={30}
         />
+        */
+        }
+        
       </div>
     );
   }
@@ -81,19 +86,17 @@ class Header extends React.Component {
   }
 }
 
-class Action extends React.Component {
-  render() {
-    return (
-      <div>
-        <button 
-          onClick={this.props.handlePick}
-          disabled={!this.props.hasOptions}
-        >
-          What Should I Do?
-        </button>
-      </div>
-    )
-  }
+const Action = (props) => {
+  return (
+    <div>
+      <button 
+        onClick={props.handlePick}
+        disabled={!props.hasOptions}
+      >
+        What Should I Do?
+      </button>
+    </div>
+  )
 }
 
 class Options extends React.Component {
@@ -154,15 +157,17 @@ class AddOption extends React.Component {
   }
 }
 
-//stateless functional component
-const User = (props) => {
-    return (
-      <div>
-        <h3>Stateless Functional Component example</h3>
-        <p>Name: {props.name}</p>
-        <p>Age: {props.age}</p>
-      </div>
-    )
-}
+//stateless functional component (no access to "this")
+//props gets passed in as first argument.  
+//advantages: Faster than class based (no overhead, logic, etc),  Easier to read/write, easier to test
+// const User = (props) => {
+//     return (
+//       <div>
+//         <h3>Stateless Functional Component example</h3>
+//         <p>Name: {props.name}</p>
+//         <p>Age: {props.age}</p>
+//       </div>
+//     )
+// }
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'))
