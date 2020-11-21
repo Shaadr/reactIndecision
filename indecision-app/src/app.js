@@ -1,8 +1,3 @@
-//Stateless Functional Component
-
-
-//class based component - manages state
-//  good examples are Header, Action, Options, and Option
 class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
@@ -44,12 +39,11 @@ class IndecisionApp extends React.Component {
   }
 
   render() {
-    const title = 'Indecision'
     const subtitle = 'Put your life in the hands of a computer'
 
     return (
       <div>
-        <Header title={title} subtitle={subtitle}/>
+        <Header subtitle={subtitle}/>
         <Action 
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
@@ -79,9 +73,13 @@ const Header = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <h2>{props.subtitle}</h2>
+      {props.subtitle && <h2>{props.subtitle}</h2>}
     </div>
   )
+}
+
+Header.defaultProps = {
+  title: "Indecision"
 }
 
 const Action = (props) => {
