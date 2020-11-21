@@ -81,6 +81,10 @@ var IndecisionApp = function (_React$Component) {
         }),
         React.createElement(AddOption, {
           handleAddOption: this.handleAddOption
+        }),
+        React.createElement(User, {
+          name: 'Mike',
+          age: 30
         })
       );
     }
@@ -262,5 +266,32 @@ var AddOption = function (_React$Component6) {
 
   return AddOption;
 }(React.Component);
+
+//stateless functional component
+
+
+var User = function User(props) {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h3',
+      null,
+      'Stateless Functional Component example'
+    ),
+    React.createElement(
+      'p',
+      null,
+      'Name: ',
+      props.name
+    ),
+    React.createElement(
+      'p',
+      null,
+      'Age: ',
+      props.age
+    )
+  );
+};
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));

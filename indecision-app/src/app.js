@@ -61,6 +61,10 @@ class IndecisionApp extends React.Component {
         <AddOption
           handleAddOption={this.handleAddOption}  
         />
+        <User 
+          name="Mike"
+          age={30}
+        />
       </div>
     );
   }
@@ -150,5 +154,15 @@ class AddOption extends React.Component {
   }
 }
 
+//stateless functional component
+const User = (props) => {
+    return (
+      <div>
+        <h3>Stateless Functional Component example</h3>
+        <p>Name: {props.name}</p>
+        <p>Age: {props.age}</p>
+      </div>
+    )
+}
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'))
