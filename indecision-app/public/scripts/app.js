@@ -160,7 +160,7 @@ var Option = function Option(props) {
     React.createElement(
       'button',
       {
-        onClick: function onClick(e) {
+        onClick: function onClick() {
           props.handleDeleteOption(props.optionText); //must run function in order to get access to access props and event 
         }
       },
